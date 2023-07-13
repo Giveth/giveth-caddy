@@ -1,9 +1,8 @@
-kFROM caddy:2-alpine -builder AS builder
+FROM caddy:2-alpine -builder AS builder
 
 RUN xcaddy build \
-    --with github.com/RussellLuo/caddy-ext/ratelimit
-    --with github.com/zhangjiayin/caddy-geoip2
     --with github.com/mholt/caddy-ratelimit
+    --with github.com/porech/caddy-maxmind-geolocation
 
 FROM caddy:2-alpine
 
