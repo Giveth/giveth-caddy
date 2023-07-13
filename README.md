@@ -1,5 +1,5 @@
 # Caddy giveth
-[![ci](https://github.com/Giveth/giveth-caddy/actions/workflows/ci.yml/badge.svg)](https://github.com/Giveth/giveth-caddy/actions/workflows/ci.yml)
+[![ci](https://github.com/Giveth/giveth-caddy/actions/workflows/ci.yml/badge.svg)](https://github.com/Giveth/giveth-caddy/actions/workflows/ci.yml)  
 We want a specific Caddy Web Server Image that works with our Giveth-All stack. We are using this as a migration from nginx. This is a 
 specific caddy build that supports the below:
 1. Rate Limiting
