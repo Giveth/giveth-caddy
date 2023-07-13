@@ -4,7 +4,7 @@ RUN apk add --no-cache git go && \
     GO111MODULE=on go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest && \
     /root/go/bin/xcaddy build \
         --with github.com/mholt/caddy-ratelimit \
-        --with github.com/porech/caddy-maxmind-geolocation
+        --with github.com/porech/caddy-maxmind-geolocation \
         --with github.com/RussellLuo/caddy-ext/ratelimit
 
 FROM caddy:2.6.4-alpine
