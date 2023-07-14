@@ -19,10 +19,7 @@ You can find the docker-compose configuration snippet example here:
     env_file:
       - .env
     environment:
-      IMPACT_GRAPH_URL: ${IMPACT_GRAPH_URL:-}
-      AUTH_SERVICE_URL: ${AUTH_SERVICE_URL:-}
-      NOTIFICATION_CENTER_URL: ${NOTIFICATION_CENTER_URL:-}
-      APIGIV_URL = ${APIGIV_URL:-}
+      MY_URL = ${MY_URL:-}
       RESTRICTED_PATHS: ${RESTRICTED_PATHS:-}
       IP_WHITELIST: ${IP_WHITELIST:-}
     volumes:
