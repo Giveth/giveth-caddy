@@ -5,7 +5,8 @@ RUN apk add --no-cache git go && \
     /root/go/bin/xcaddy build \
         --with github.com/mholt/caddy-ratelimit \
         --with github.com/porech/caddy-maxmind-geolocation \
-        --with github.com/RussellLuo/caddy-ext/ratelimit
+#        --with github.com/RussellLuo/caddy-ext/ratelimit \
+        --with github.com/caddyserver/nginx-adapter
 #        --with github.com/hayak3/caddy-ratelimit
 
 FROM caddy:2.6.4
