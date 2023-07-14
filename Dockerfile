@@ -1,4 +1,4 @@
-FROM caddy:2.6.4-alpine AS builder
+FROM caddy:2.6.4 AS builder
 
 RUN apk add --no-cache git go && \
     GO111MODULE=on go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest && \
@@ -8,6 +8,6 @@ RUN apk add --no-cache git go && \
         --with github.com/RussellLuo/caddy-ext/ratelimit
 #        --with github.com/hayak3/caddy-ratelimit
 
-FROM caddy:2.6.4-alpine
+FROM caddy:2.6.4
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
