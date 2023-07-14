@@ -12,7 +12,7 @@ You can find the docker-compose configuration snippet example here:
     container_name: caddy
     restart: unless-stopped
     networks:
-      - giveth-all
+      - mynetwork
     ports:
       - 80:80
       - 443:443
