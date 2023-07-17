@@ -1,14 +1,9 @@
-FROM caddy:2.6.4 AS builder
+FROM caddy:2.6.4-builder-alpine AS builder
 
-RUN apk add --no-cache git go && \
-    GO111MODULE=on go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest && \
-    /root/go/bin/xcaddy build \
-        --with github.com/mholt/caddy-ratelimit \
-        --with github.com/porech/caddy-maxmind-geolocation \
-#        --with github.com/RussellLuo/caddy-ext/ratelimit \
-        --with github.com/caddyserver/nginx-adapter
-#        --with github.com/hayak3/caddy-ratelimit
+RUN xcaddy build \
+    --with github.com/mholt/caddy-ratelimit \
+    --with github.com/porech/caddy-maxmind-geolocation
 
-FROM caddy:2.6.4
+FROM caddy:2.6.4-alpine
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
